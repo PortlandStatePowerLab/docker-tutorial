@@ -17,3 +17,24 @@ cd docker-tutorial
 docker build --tag psu-dev .
 docker run -id psu-dev
 ```
+
+# Development Environment
+Now that we have a docker container running we can set up our editor to attach to it and program from our local machine as if it was the container. Each IDE or Editor has its own setup, but we will show how to setup using Visual Studio Code as it is cross-platform and fairly straight forward. 
+
+## Visual Studio Code
+Download VS Code from https://code.visualstudio.com/ and install according to your operating system.
+
+### Extensions
+Once VS Code is installed you will need a few extensions to make developing in your project much easier. This only lists C++ specific extensions, but you can find extensions for any language you are working in. The most important are **Docker and Remote - Container** as these are what allows VS Code to attach to a container and act as if your local machine is the container. 
+
+- C/C++
+- C++ Helper
+- CMake
+- Docker
+- Remote - Container
+- Remote - SSH
+
+### Attach VS Code
+The following link shows you how to simply connect to a container to start development. And off you go!
+
+https://code.visualstudio.com/docs/remote/attach-container

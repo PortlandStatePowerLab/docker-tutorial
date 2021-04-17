@@ -18,7 +18,7 @@ RUN cd ~/temp && wget https://dl.bintray.com/boostorg/release/1.75.0/source/boos
   && cd boost_1_75_0 && ./bootstrap.sh && ./b2 && ./b2 install
 
 # install xerces for the IEEE 2030.5 xml validation, not all projects will use this
-RUN cd ~/temp && wget https://mirror.jframeworks.com/apache//xerces/c/3/sources/xerces-c-3.2.3.tar.gz \
+RUN cd ~/temp && wget https://mirrors.sonic.net/apache//xerces/c/3/sources/xerces-c-3.2.3.tar.gz \
   && tar -xf xerces-c-3.2.3.tar.gz \
   && cd xerces-c-3.2.3 && ./configure --prefix=/usr && make && make install \
   && cd && rm -rf temp

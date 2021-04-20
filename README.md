@@ -18,6 +18,15 @@ docker build --tag psu-dev .
 docker run -id psu-dev
 ```
 
+## Saving/Loading Image
+I have found that my machine will delete images after a system update. This is actually a common issue that will hopefully be fixed soon. If you have room on your machine, approximatly 3 GB, I recommend saving the image to a tar file so that you can always reload the image if something happens. 
+
+```shell
+cd docker-tutorial
+docker save --output psu-dev.tar psu-dev
+docker load < psu-dev.tar
+```
+
 # Development Environment
 Now that we have a docker container running we can set up our editor to attach to it and program from our local machine as if it was the container. Each IDE or Editor has its own setup, but we will show how to setup using Visual Studio Code as it is cross-platform and fairly straight forward. 
 

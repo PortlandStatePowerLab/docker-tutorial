@@ -14,7 +14,7 @@ Our dockerfile consists of all project dependancies required to run each of our 
 ```shell
 git clone https://github.com/PortlandStatePowerLab/docker-tutorial
 cd docker-tutorial
-docker build --tag psu-dev .
+docker build --file Dockerfile.buster --tag psu-dev .
 docker run -id psu-dev
 ```
 

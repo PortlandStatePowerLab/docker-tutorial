@@ -13,7 +13,7 @@ RUN cd ~/temp && wget https://github.com/Kitware/CMake/releases/download/v3.18.4
 
 # ensure boost is at least 1.70, currently debian:buster is fine, but raspberry pi is on 1.63 
 # so I have updated the container since the pi has to be upgraded
-RUN cd ~/temp && wget https://dl.bintray.com/boostorg/release/1.75.0/source/boost_1_75_0.tar.gz \
+RUN cd ~/temp && wget https://boostorg.jfrog.io/artifactory/main/release/1.75.0/source/boost_1_75_0.tar.gz \
   && tar -xf boost_1_75_0.tar.gz \
   && cd boost_1_75_0 \
   && ./bootstrap.sh \

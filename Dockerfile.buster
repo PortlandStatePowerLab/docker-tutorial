@@ -3,7 +3,7 @@ FROM debian:buster AS builder
 
 # general environment dependencies 
 RUN apt-get update -y \
-  && apt-get install -y build-essential git cmake wget pkg-config libmodbus-dev libssl-dev\
+  && apt-get install -y build-essential git cmake wget pkg-config python3 libmodbus-dev libssl-dev\
   && mkdir ~/temp
 
 # ensure cmake is at least 3.14, currently debian:buster has 3.13 

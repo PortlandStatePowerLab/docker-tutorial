@@ -10,6 +10,7 @@ Our dockerfile consists of all project dependancies required to run each of our 
 - Change directory to the docker-tutorial folder
 - Build the Dockerfile.buster and wait for the process to finish
 - Run the docker image as *-id* interactive and detached so it is running in the background
+- Note: Read below section on RAM use before running for the first time!
 
 ```shell
 git clone https://github.com/PortlandStatePowerLab/docker-tutorial
@@ -17,6 +18,15 @@ cd docker-tutorial
 docker build --file Dockerfile.buster --tag psu-dev .
 docker run -id psu-dev
 ```
+### Creeping Host Machine RAM Use
+Note: It is a well-documented problem that docker containers will "creep," their use of the host machine's RAM. To solve this problem, you can specify a limit to the RAM used by the container. This link contains more details: https://docs.docker.com/config/containers/resource_constraints/
+
+To do this for the above instructions, you can try replacing `docker run -id psu-dev` with the following:
+
+```shell
+docker run -id -m "4g" psu-dev
+```
+Where the `"4g"` in quotes is the RAM ceiling for the container (in gigabytes, as specified by the g).
 
 ## Saving/Loading Image
 I have found that my machine will delete images after a system update. This is actually a common issue that will hopefully be fixed soon. If you have room on your machine, approximatly 3 GB, I recommend saving the image to a tar file so that you can always reload the image if something happens. 
